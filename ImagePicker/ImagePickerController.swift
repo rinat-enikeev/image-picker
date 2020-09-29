@@ -254,7 +254,7 @@ open class ImagePickerController : UIViewController {
             collectionViewDataSource.assetsModel.fetchResult = assetsFetchResultBlock?()
             collectionViewDataSource.layoutModel = LayoutModel(configuration: layoutConfiguration, assets: collectionViewDataSource.assetsModel.fetchResult.count)
             
-        case .restricted, .denied:
+        case .restricted, .denied, .limited:
             if let view = overlayView ?? dataSource?.imagePicker(controller: self, viewForAuthorizationStatus: status), view.superview != collectionView {
                 collectionView.backgroundView = view
                 overlayView = view
